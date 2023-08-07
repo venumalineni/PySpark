@@ -1,55 +1,53 @@
-# PySpark
-
- 1. What is PySpark?
+**1. What is PySpark?**
  
 PySpark is an interface for Apache Spark in Python. It not only allows you to write Spark applications using Python APIs, but also provides the PySpark shell for interactively analyzing our data in a distributed environment. PySpark supports most of Spark features such as Spark SQL, DataFrame, Steaming, Mlib(Machine Learning) and Spark Core
 
-2. Create Dataframe manually with hard coded values in PySpark
+**2. Create Dataframe manually with hard coded values in PySpark**
 •	We can create DataFrame manually with hard coded values in PySpark
 •	We will be using createDataFrame() method from Spark session object
 
-3. Read CSV file in to Dataframe using PySpark
+**3. Read CSV file in to Dataframe using PySpark**
 •	We can create DataFrame manually with hard coded values in PySpark
 •	We will be using createDataFrame() method from Spark session object
 
-4. Write DataFrame into CSV file using PySpark
+**4. Write DataFrame into CSV file using PySpark**
 •	We can create DataFrame manually with hard coded values in PySpark
 •	We will be using createDataFrame() method from Spark session object
  
-5. Read json file into DataFrame using Pyspark 
+**5. Read json file into DataFrame using Pyspark **
 Using read.json("parth") or read.format("json").load("path"), we can read a JSON file into a PySpark DataFrame
 We can use multiline option to read JSON files scattered across mulitiple lines. By default multipleline option is set to False. 
 
-6. Write DataFrame into json file using PySpark ]
+**6. Write DataFrame into json file using PySpark **
 We will use DataFrameWriter object to write PySpark DataFrame to a CSV file. 
  We use df.write.json(path)
 
-7. Read Parquet file into Dataframe using PySpark
+**7. Read Parquet file into Dataframe using PySpark**
 Using read.parquet(“path”) or read.format(“parquet”).load(“path”) to read a parquet file into a PySpark DataFrame
 
-8. Write DataFrame into parquet file using PySpark
+**8. Write DataFrame into parquet file using PySpark**
  
 We use df.write.parquet(‘filepath’) for writing file to parquet file
 
-9. show() in Pyspark to display Dataframe contents in Table
+**9. show() in Pyspark to display Dataframe contents in Table**
 This is to display DataFrame contents in Table
 
-10. withColumn() in PySpark 
+**10. withColumn() in PySpark **
 
 This function is to Add new column or Change existing column data or type in DataFrame. 
 This is a transformation function of DataFrame which is used to change the value, convert the datatype of an existing column, create a new column, and many more. 
 
-11. withColumnRenamed() usage in PySpark
+**11. withColumnRenamed() usage in PySpark**
 This function is to rename the column in DataFrame
 
-12. StructType() & StructField() in PySpark
+**12. StructType() & StructField() in PySpark**
 •	PySpark StructType & StructField classes are used to programmatically specify the schema to the DataFrame and create complex columns like nested struct, array and map columns
 •	Structype is a collection of StructField’s
 
-13. ArrayType Columns in PySpark
+**13. ArrayType Columns in PySpark**
 •	Fetch value from Array as new column, it combine columns to Array. 
 
-14. explode(), split(), array() & array_contains() functions in PySpark
+**14. explode(), split(), array() & array_contains() functions in PySpark**
  
 Explode() - To create a new row for each element in the given array column
 Split() - To split a string into multiple elements
@@ -57,33 +55,33 @@ array() - To create a new array column by merging the data from multiple columns
 array_contains() - this is sql function used to check if array column contains a value. Returns null if the array is null, true 
  if the array contains the value, and false otherwise. 
 
-15. MapType Column in PySpark 
+**15. MapType Column in PySpark **
  
 MapType() - This is used to represent map key-value pair similar to python      Dictionary(Dict)
 
-16. map_keys(), map_values() & explode() functions to work with MapType Columns in PySpark
+**16. map_keys(), map_values() & explode() functions to work with MapType Columns in PySpark**
 this session explains how below functions behaves when we work with MapType columns
  
 explode() - To create a new row with key and value in MapType column
 map_keys() - To create a new column to populate only keys
 map_values() - To create a new column to populate only values
 
-17. Row() class in PySpark
+**17. Row() class in PySpark**
  
 Row() class - Using to represent every row  in dataframe, we can also create nested struct type also using Row() class
 
-18. Column class in PySpark 
+**18. Column class in PySpark **
  
 Column() class 
 •	PySpark Column class represents a single column in a DataFrame
 •	Pyspark.sql.Column class provides several functions to work with DataFrame to manipulate the Column values, evaluate the boolean expression in filter rows, retrieve a value or part of a value from a DataFrame column. 
 •	One of the simplest ways to create a Column class object is by using PySpark lit() SQL function.
 
-19. when() & otherwise() functions in PySpark
+**19. when() & otherwise() functions in PySpark**
  
 when() & otherwise() are similar to SQL Case When, executes sequence of expressions until it matches the condition and returns a value when match
  
-20. alias(), asc(), desc(), cast() & like() functions on Columns of dataframe in PySpark
+**20. alias(), asc(), desc(), cast() & like() functions on Columns of dataframe in PySpark**
  
 alias(), asc(), desc(), cast() and like() - These are functions on columns of dataframe in PySpark
  
@@ -93,57 +91,57 @@ cast() convert the datatype
 like()  Similar to SQL LIKE expression
 
 
-21. filter() & where() in PySpark
+**21. filter() & where() in PySpark**
  
 Filter() & where() - These functions operate exactly the same.  These are used to filter the rows from DataFrame based on the given condition or SQL expression
 We can use where() clause instead of the filter() if we are coming from SQL background. 
 
-22. distinct() & dropDuplicates() in PySpark 
+**22. distinct() & dropDuplicates() in PySpark **
  
 distinct() & dropDuplicates() - Using these functions we can get the distinct rows
  
 distinct() - is used to remove the duplicate rows (all columns)
 dropDuplicates() - is used to drop rows based on selected (one or multiple) columns.
 
-23. orderBy() & sort() in PySpark 
+**23. orderBy() & sort() in PySpark **
  
 orderBy() & sort() - These functions are used to sort DataFrame by ascending or descending order based on single or multiple columns.
 By default, sorting will happen in ascending order. We can explicitly mention ascending or descending using asc(), desc() functions. 
 
-24. union() & unionAll() in PySpark
+**24. union() & unionAll() in PySpark**
  
 union() & unionAll() - 
 •	These transformations are used to merge two or more DataFrame's of the same schema or structure. 
 •	These will returns the new DataFrame with all rows from two DataFrames regardless of duplicate data
 •	Here union() will work differently when compared with union in sql. Here it will not remove duplicates. To remove duplicates we can use distinct() function
 
-25. groupBy() in PySpark 
+**25. groupBy() in PySpark **
  
 groupBy() - 
 Similar to SQL Group By clasue, PySpark groupBy() function is used to collect the identical data into groups on DataFrame and perform count, sum, avg, min, max functions on the grouped data.
 
-26. GroupBy agg() function in PySpark
+**26. GroupBy agg() function in PySpark**
  
 groupBy().agg()- 
 This is used to calculate more than one aggregate(multiple aggregates) at a time on grouped DataFrame
 
-27. unionByName() function in PySpark
+**27. unionByName() function in PySpark**
  
 unionByName()- 
 This is used to merge/union two DataFrames with a different number of columns (different schema) by passing allowMissingColumns with the value true
 
-28. select() function in PySpark
+**28. select() function in PySpark**
  
 Select() - 
 This is used to select single, multiple, column by index, all columns from the list and the nested columns from a DataFrame.
 
-29. join() function in PySpark
+**29. join() function in PySpark**
  
 join() - Inner, left, right, full
  
 Join() is like SQL JOIN. We can combine columns from different DataFrames based on condition. It supports all basic join types such as INNER, LEFT OUTER, RIGHT OUTER, LEFT ANTI, LEFT SEMI, CROSS, SELF
 
-30. join() function in PySpark Continuation | Left semi, Left anti & self join
+**30. join() function in PySpark Continuation | Left semi, Left anti & self join**
  
 join() - leftsemi, leftanti, self join
  
@@ -151,43 +149,43 @@ join() - leftsemi, leftanti, self join
 •	leftanti opposite to leftsemi, it gets not matching rows from left dataframe. 
 •	Self join, join data with same dataframe
 
-31. pivot() function in PySpark
+**31. pivot() function in PySpark**
  
 Pivot() - 
 •	It's used to rotate data in one column into multiple columns
 •	It is an aggregation where one of the grouping column values will be converted in individual columns
 
-32. unpivot Dataframe in PySpark | stack function 
+**32. unpivot Dataframe in PySpark stack function **
  
 Unpivot /stack()
 Unpivot is rotating columns into rows. PySpark SQL doesn't have unpivot function hence will use the stack() function
 
-33. fill() & fillna() functions in PySpark
+**33. fill() & fillna() functions in PySpark**
  
 fill() & fillna() - These functions is used to replace NULL/None values on all or selected multiple DataFrame columns with either zero(0), empty, string, space, or any constant literal values.
 
-34. sample() function in PySpark 
+**34. sample() function in PySpark **
  
 Sample()
 •	To get the random sampling subset from the large dataset
 •	Use fraction to indicate what percentage of data to return and seed value to make sure every time to get same random sample 
 
-35. collect() function in PySpark
+**35. collect() function in PySpark**
  
 collect()
 •	This retrieves all elements in a DataFrame as an Array of Row type to the driver node.
 •	collect() is an action hence it doesn’t return a DataFrame instead, it returns data in an Array to the driver. Once the data is in an array, we can use python for loop to process it further
 •	collect() use it with small DataFrames. With big DataFrames it may result in our of memory error as its return entire data to singe node(driver)
 
-36. DataFrame.transform() function in PySpark
+**36. DataFrame.transform() function in PySpark**
 DataFrame.transform()
 This function is used to chain the custom transformations and this function returns the new DataFrame after applying the specified transformations
 
-37. pyspark.sql.functions.transform() function in PySpark
+**37. pyspark.sql.functions.transform() function in PySpark**
 pyspark.sql.functions.transform()
 This function is used to apply the transformation on a column of type Array. This function applies the specified transformation on every element of the array and returns an object of ArrayType
 
-38. createOrReplaceTempView() function in PySpark
+**38. createOrReplaceTempView() function in PySpark**
 
  
 CreateOrReplaceTempView() 
@@ -196,72 +194,72 @@ CreateOrReplaceTempView()
 •	Temp views are session scoped and cannot be shared between the sessions. 
 
 
-39. createOrReplaceGlobalTempView() function in PySpark
+**39. createOrReplaceGlobalTempView() function in PySpark**
  
 createOrReplaceGlobalTempView() 
 •	It's used to create temp views or tables globally, which can be accessed across the sessions with in Spark Application. 
 •	To query these tables, we need to append the global_temp.Table_Name
 
 
-40. UDF(user defined function) in PySpark
+**40. UDF(user defined function) in PySpark**
  
 UDF() - user defined function in PySpark
 •	UDF's are similar to functions in SQL. We define some logic in functions and store them in Database and use them in queries
 •	Similar to that we can write our own custom logic in python function and register it with PySpark using udf() function
 
-41. Convert RDD to Dataframe in PySpark 
+**41. Convert RDD to Dataframe in PySpark **
  
 RDD -Resilient Distributed Dataset
 •	Its collection of objects similar to list in Python. Its immutable and In
 •	By using parallelize() function of SparkContext we can create an RDD.
 
 
-42. map() transformation in PySpark
+**42. map() transformation in PySpark**
  
 Map()
 •	It's RDD transformation used to apply function(lambda) on every element of RDD and returns new RDD.
 •	Dataframe doesn't have map() transformation to use with Dataframe, we need to generate RDD first. 
 
 
-43. flatMap() transformation in PySpark
+**43. flatMap() transformation in PySpark**
  
 flatMap()
 •	It's transformation operation that flattens the RDD(array/map DataFrame columns) after applying the function on every element and returns a new PySpark RDD. 
 •	It's not available in dataframes. Explode() functions can be used in dataframes to flatten arrays
 
 
-44. partitionBy function in PySpark
+**44. partitionBy function in PySpark**
  
 partitionBy()
 •	It is used to partition large Dataset into smaller files based on one ore multiple columns
 
 
-45. from_json() function to convert json string in to MapType in Pyspark
+**45. from_json() function to convert json string in to MapType in Pyspark**
  
 from_json() to MapType()
 It's used to convert json string in to MapType or StructType. Here we can see how to convert to MapType
 
-46. from_json() function to convert json string into StructType in Pyspark
+**46. from_json() function to convert json string into StructType in Pyspark**
  
 from_json() to StructType()
 It's used to convert json string in to MapType or StructType. Here we can see how to convert to StructType
 
-47. to_json() function in PySpark 
+**47. to_json() function in PySpark **
  
 to_json()
 It's used to convert DataFrame column MapType or StructType to JSON string
 
-48. json_tuple() function in PySpark
+**48. json_tuple() function in PySpark**
  
 to_tuple()
 It is used to query or extract elements from json string column and create as new columns 
 
-49. get_ json_object() function in PySpark
+**49. get_ json_object() function in PySpark**
  
 get_json_object()
 It is used to extract the JSON string based on path from the JSON column. 
 
-50. Date functions in PySpark | current_date(), to_date(), date_format() functions
+**50. Date functions in PySpark | current_date(), to_date(), date_format() functions**
  
 Date functions in PySpark
 current_date(), date_format(), to_date()
@@ -270,12 +268,12 @@ current_date(), date_format(), to_date()
 •	Date_format() to parses the date and converts from yyyy-MM-dd specified format. 
 •	To_date() converts date string into datetype. We need to specify format of data in the string in the function. 
 
-51. datediff(), months_between(), add_months(), date_add(), month(), year() functions in PySpark
+**51. datediff(), months_between(), add_months(), date_add(), month(), year() functions in PySpark**
  
 Date functions in PySpark
 datediff(), months_between(), add_months(), date_add(), year(), month()
 
-52. Timestamp Functions in PySpark
+**52. Timestamp Functions in PySpark**
  
 Timestamp functions in PySpark
 current_timestamp(), to_timestamp(), hour(), minute(), second()
@@ -284,7 +282,7 @@ current_timestamp(), to_timestamp(), hour(), minute(), second()
 •	To_timestamp() converts timestamp string into TimestampType. We need to specify format of timestamp in the string in the function. 
 •	hour(), minute(), second() functions. 
 
-53. approx_count_distinct(), avg(), collect_list(), collect_set(), countDistinct(), count()
+**53. approx_count_distinct(), avg(), collect_list(), collect_set(), countDistinct(), count()**
  
 Aggregate functions in PySpark
 Aggregate functions operate on a group of rows and calculate a single return value for every group. 
@@ -296,7 +294,7 @@ countDistinct() - returns number of distinct elements in input column
 count() - returns number of elements in a column
 
 
-54. row_number(), rank(), dense_rank() functions in PySpark 
+**54. row_number(), rank(), dense_rank() functions in PySpark** 
  
 Ranking functions in PySpark
 •	We need to partition the data using Window.partitionBy(), and for row number and rank function we need to additionally order by on partition data using orderBy clause. 
